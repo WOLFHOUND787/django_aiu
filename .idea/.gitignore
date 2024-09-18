@@ -4,4 +4,4 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 # Virtual environment
-venv/
+.venv/
