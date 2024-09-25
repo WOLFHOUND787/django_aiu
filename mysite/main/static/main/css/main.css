@@ -1,0 +1,11 @@
+body {
+    width: 1240px;
+    background-color: #808080;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

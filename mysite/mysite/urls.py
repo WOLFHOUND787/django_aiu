@@ -1,11 +1,13 @@
 from django.contrib import admin
-from django.urls import path, include
-from blog import views as blog_views
-from users import views as user_views
+from django.urls import include, path
+
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', blog_views.home, name='home'),
-    path('about/', blog_views.about, name='about'),
-    path('users/', include('users.urls')),
-]
+    path('/', include('main.urls')),
+    path('/blog', include('blog.urls')),
+    path('/users', include('users.urls')),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
